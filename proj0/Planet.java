@@ -1,4 +1,6 @@
 public class Planet {
+    static final double G = 6.67e-11;
+    
     public double xxPos;
     public double yyPos;
     public double xxVel;
@@ -26,5 +28,9 @@ public class Planet {
 
     public double calcDistance(Planet p) {
         return Math.sqrt(Math.pow(xxPos-p.xxPos, 2) + Math.pow(yyPos - p.yyPos, 2));
+    }
+
+    public double calcForceExertedBy(Planet p) {
+        return G * mass * p.mass / Math.pow(calcDistance(p), 2);
     }
 }
