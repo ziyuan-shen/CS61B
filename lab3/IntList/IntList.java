@@ -4,18 +4,19 @@ import java.util.Formatter;
  * A naked recursive list of integers, similar to what we saw in lecture 3, but
  * with a large number of additional methods.
  *
- * @author P. N. Hilfinger, with some modifications by Josh Hug and melaniecebula
+ * @author P. N. Hilfinger, with some modifications by Josh Hug and
+ * melaniecebula
  *         [Do not modify this file.]
  */
 public class IntList {
     /**
      * First element of list.
      */
-    public int first;
+    private int first;
     /**
      * Remaining elements of list.
      */
-    public IntList rest;
+    private IntList rest;
 
     /**
      * A List with first FIRST0 and rest REST0.
@@ -81,9 +82,9 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        if (A == null)
+        if (A == null) {
             return B;
+        }
         IntList p = A;
         while (p.rest != null) {
             p = p.rest;
@@ -97,9 +98,9 @@ public class IntList {
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
     public static IntList catenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        if (A == null && B == null)
+        if (A == null && B == null) {
             return null;
+        }
         IntList prehead = new IntList();
         IntList p = prehead;
         while (A != null) {
@@ -111,6 +112,23 @@ public class IntList {
             p.rest = new IntList(B.first, null);
             B = B.rest;
             p = p.rest;
+        }
+        return prehead.rest;
+    }
+
+    /**
+     * reverse a list.
+     * @param A
+     * @return
+     */
+    public static IntList reverse(IntList A) {
+        IntList prehead = new IntList();
+        IntList p = A;
+        while (p != null) {
+            IntList temp = p;
+            p = p.rest;
+            temp.rest = prehead.rest;
+            prehead.rest = temp;
         }
         return prehead.rest;
     }
