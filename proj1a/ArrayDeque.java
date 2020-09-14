@@ -10,14 +10,14 @@ public class ArrayDeque<T> {
     }
 
     private void expand() {
-        T[] new_data = (T[]) new Object[data.length*2];
-        System.arraycopy(data, head + 1, new_data, 1, data.length - head - 1);
+        T[] newdata = (T[]) new Object[data.length * 2];
+        System.arraycopy(data, head + 1, newdata, 1, data.length - head - 1);
         if (tail < head) {
-            System.arraycopy(data, 0, new_data, data.length - head - 1, tail + 1);
+            System.arraycopy(data, 0, newdata, data.length - head - 1, tail + 1);
         }
         head = 0;
         tail = data.length - 1;
-        data = new_data;
+        data = newdata;
     }
 
     public void addFirst(T item) {
@@ -81,23 +81,23 @@ public class ArrayDeque<T> {
     }
 
     private void shrink() {
-        T[] new_data = (T[]) new Object[data.length/2];
+        T[] newdata = (T[]) new Object[data.length / 2];
         if (tail < head) {
-            System.arraycopy(data, head + 1, new_data, 1, data.length - head - 1);
-            System.arraycopy(data, 0, new_data, data.length - head, tail + 1);
+            System.arraycopy(data, head + 1, newdata, 1, data.length - head - 1);
+            System.arraycopy(data, 0, newdata, data.length - head, tail + 1);
         } else {
-            System.arraycopy(data, head + 1, new_data, 1, tail - head);
+            System.arraycopy(data, head + 1, newdata, 1, tail - head);
         }
         head = 0;
         tail = size();
-        data = new_data;
+        data = newdata;
     }
 
     public T removeFirst() {
         if (isEmpty()) {
             return null;
         }
-        T ans = data[(head+1) % data.length];
+        T ans = data[(head + 1) % data.length];
         head = (head + 1) % data.length;
         if (size() < data.length / 2) {
             shrink();

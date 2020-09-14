@@ -4,7 +4,7 @@ public class LinkedListDeque<T> {
         Node next;
         Node prev;
 
-        public Node(T v) {
+        Node(T v) {
             value = v;
             next = null;
             prev = null;
@@ -57,7 +57,7 @@ public class LinkedListDeque<T> {
 
     public void printDeque() {
         Node p = head;
-        for (int i=0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             System.out.print(p.value);
             if (i != size - 1) {
                 System.out.print(" ");
@@ -103,7 +103,7 @@ public class LinkedListDeque<T> {
             return null;
         } else {
             Node p = head;
-            for (int i=0; i<index; i++) {
+            for (int i = 0; i < index; i++) {
                 p = p.next;
             }
             return p.value;
@@ -116,11 +116,11 @@ public class LinkedListDeque<T> {
         } else if (index == 0) {
             return head.value;
         } else {
-            Node original_head = head;
+            Node originalhead = head;
             head = head.next;
             size -= 1;
             T ans = getRecursive(index - 1);
-            head = original_head;
+            head = originalhead;
             size += 1;
             return ans;
         }
