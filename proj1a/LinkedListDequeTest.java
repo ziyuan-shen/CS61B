@@ -63,7 +63,7 @@ public class LinkedListDequeTest {
 	public static void addRemoveTest() {
 
 		System.out.println("Running add/remove test.");
-		
+
 		LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
 		// should be empty 
 		boolean passed = checkEmpty(true, lld1.isEmpty());
@@ -82,7 +82,22 @@ public class LinkedListDequeTest {
 
 	public static void main(String[] args) {
 		System.out.println("Running tests.\n");
-		addIsEmptySizeTest();
-		addRemoveTest();
+
+		LinkedListDeque<String> lld = new LinkedListDeque<String>();
+		lld.printDeque();
+		lld.addFirst("Alice");
+		lld.addLast("Simon");
+		lld.addFirst("John");
+		lld.addLast("Clara");
+		System.out.println(lld.size());
+		lld.printDeque();
+		System.out.print("\n");
+		System.out.println(lld.removeFirst());
+		System.out.println(lld.removeFirst());
+		System.out.println(lld.removeLast());
+		System.out.println(lld.size());
+		lld.printDeque();
+		// addIsEmptySizeTest();
+		// addRemoveTest();
 	}
 }

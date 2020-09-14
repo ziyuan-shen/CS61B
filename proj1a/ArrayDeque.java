@@ -30,6 +30,8 @@ public class ArrayDeque<T> {
         } else {
             head -= 1;
         }
+        // System.out.println("head" + head);
+        // System.out.println("tail" + tail);
     }
 
     public void addLast(T item) {
@@ -38,6 +40,8 @@ public class ArrayDeque<T> {
         }
         tail = (tail + 1) % data.length;
         data[tail] = item;
+        System.out.println("head" + head);
+        System.out.println("tail" + tail);
     }
 
     private boolean isFull() {
@@ -88,8 +92,9 @@ public class ArrayDeque<T> {
         } else {
             System.arraycopy(data, head + 1, newdata, 1, tail - head);
         }
+        int s = size();
         head = 0;
-        tail = size();
+        tail = s;
         data = newdata;
     }
 
@@ -102,6 +107,8 @@ public class ArrayDeque<T> {
         if (size() < data.length / 2) {
             shrink();
         }
+        // System.out.println(size());
+        // System.out.println(data.length);
         return ans;
     }
 
