@@ -92,6 +92,7 @@ public class LinkedListDeque<T> {
                 head = null;
             } else {
                 tail = tail.prev;
+                tail.next = null;
             }
             size -= 1;
             return v;
