@@ -40,7 +40,7 @@ public class ArrayDeque<T> {
         data[tail] = item;
     }
 
-    public boolean isFull() {
+    private boolean isFull() {
         return (tail + 1) % data.length == head;
     }
 

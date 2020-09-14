@@ -74,6 +74,8 @@ public class LinkedListDeque<T> {
             head = head.next;
             if (head == null) {
                 tail = null;
+            } else {
+                head.prev = null;
             }
             size -= 1;
             return v;
@@ -107,6 +109,7 @@ public class LinkedListDeque<T> {
             return p.value;
         }
     }
+
     public T getRecursive(int index) {
         if (index >= size) {
             return null;
