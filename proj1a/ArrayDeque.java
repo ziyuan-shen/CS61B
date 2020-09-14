@@ -13,7 +13,7 @@ public class ArrayDeque<T> {
         T[] newdata = (T[]) new Object[data.length * 2];
         System.arraycopy(data, head + 1, newdata, 1, data.length - head - 1);
         if (tail < head) {
-            System.arraycopy(data, 0, newdata, data.length - head - 1, tail + 1);
+            System.arraycopy(data, 0, newdata, data.length - head, tail + 1);
         }
         head = 0;
         tail = data.length - 1;
@@ -40,8 +40,8 @@ public class ArrayDeque<T> {
         }
         tail = (tail + 1) % data.length;
         data[tail] = item;
-        System.out.println("head" + head);
-        System.out.println("tail" + tail);
+        // System.out.println("head" + head);
+        // System.out.println("tail" + tail);
     }
 
     private boolean isFull() {

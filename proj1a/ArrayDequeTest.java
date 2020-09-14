@@ -12,9 +12,12 @@ public class ArrayDequeTest {
         lld.printDeque();
         System.out.print("\n");
         System.out.println(lld.removeFirst());
+        System.out.println(lld.removeLast());
         System.out.println(lld.removeFirst());
         System.out.println(lld.removeLast());
         System.out.println(lld.size());
+        lld.addFirst("JE");
+        lld.addLast("hrei");
         lld.printDeque();
     }
 }
