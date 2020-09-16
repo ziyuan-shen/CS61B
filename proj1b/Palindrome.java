@@ -8,6 +8,12 @@ public class Palindrome {
     }
 
     public boolean isPalindrome(String word) {
+        Deque<Character> dq = wordToDeque(word);
+        while (dq.size() > 1) {
+            if (dq.removeFirst() != dq.removeLast()) {
+                return false;
+            }
+        }
         return true;
     }
 }

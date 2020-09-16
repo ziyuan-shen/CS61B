@@ -36,7 +36,7 @@ public class LinkedListDeque<Item> extends LinkedList<Item> implements Deque<Ite
             return null;
         }
     }
-
+    /*
     @Override
     public void addFirst(Item item) {
         super.addFirst(item);
@@ -46,4 +46,5 @@ public class LinkedListDeque<Item> extends LinkedList<Item> implements Deque<Ite
     public void addLast(Item item) {
         super.addLast(item);
     }
+     */
 }
