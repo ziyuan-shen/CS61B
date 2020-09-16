@@ -15,4 +15,12 @@ public class TestPalindrome {
         }
         assertEquals("persiflage", actual);
     }
+
+    @Test
+    public void testIsPalindrome() {
+        String p = "abcdcba";
+        String np = "cat";
+        assertTrue(palindrome.isPalindrome(p));
+        assertFalse(palindrome.isPalindrome(np));
+    }
 }
