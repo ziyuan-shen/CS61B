@@ -22,5 +22,10 @@ public class TestPalindrome {
         String np = "cat";
         assertTrue(palindrome.isPalindrome(p));
         assertFalse(palindrome.isPalindrome(np));
+        CharacterComparator cc = new OffByOne();
+        p = "ab";
+        np = "aa";
+        assertTrue(palindrome.isPalindrome(p, cc));
+        assertFalse(palindrome.isPalindrome(np, cc));
     }
 }
