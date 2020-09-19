@@ -55,7 +55,11 @@ public class ArrayRingBuffer<T>  extends AbstractBoundedQueue<T> {
      * Return oldest item, but don't remove it.
      */
     public T peek() {
-        return rb[first];
+        if (isEmpty()) {
+            throw new RuntimeException("Buffer empty");
+        } else {
+            return rb[first];
+        }
     }
 
     // TODO: When you get to part 5, implement the needed code to support iteration.
