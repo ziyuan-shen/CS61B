@@ -71,10 +71,8 @@ public class Percolation {
         return per;
     }
 
-    /*
     public static void main(String[] args) {
         WeightedQuickUnionUF uf = new WeightedQuickUnionUF(10);
         System.out.println(uf.connected(0, 9));
     }
-     */
 }
