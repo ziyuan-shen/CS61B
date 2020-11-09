@@ -16,7 +16,7 @@ public class PercolationStats {
         }
         this.T = T;
         threshold = new double[T];
-        for(int i = 0; i < T; i++) {
+        for (int i = 0; i < T; i++) {
             Percolation p = pf.make(N);
             while (!p.percolates()) {
                 int row = StdRandom.uniform(N);
@@ -33,10 +33,10 @@ public class PercolationStats {
     public double stddev() {
         return StdStats.stddev(threshold);
     }
-    public double confidentLow() {
+    public double confidenceLow() {
         return mean() - 1.96 * stddev() / Math.sqrt(T);
     }
-    public double confidentHigh() {
+    public double confidenceHigh() {
         return mean() + 1.96 * stddev() / Math.sqrt(T);
     }
 }

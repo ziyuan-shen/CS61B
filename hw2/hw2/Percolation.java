@@ -27,17 +27,19 @@ public class Percolation {
         if (site[row][col] == 0) {
             site[row][col] = 1;
             opensites += 1;
-            int[][] nei = new int[][]{{row - 1, col}, {row + 1, col}, {row, col - 1}, {row, col + 1}};
-            for(int i = 0; i < 4; i++) {
-                if (nei[i][0] >= 0 && nei[i][1] < N && nei[i][1] >= 0 && nei[i][1] < N && site[nei[i][0]][nei[i][1]] == 1) {
+            int[][] nei = new int[][]{{row - 1, col}, {row + 1, col},
+                {row, col - 1}, {row, col + 1}};
+            for (int i = 0; i < 4; i++) {
+                if (nei[i][0] >= 0 && nei[i][1] < N && nei[i][1] >= 0
+                        && nei[i][1] < N && site[nei[i][0]][nei[i][1]] == 1) {
                     uf.union(row * N + col, nei[i][0] * N + nei[i][1]);
                     break;
                 }
             }
         }
-        for (int i = 0; i < N; i++){
-            for (int j = 0; j < N; j++){
-                if (site[0][i] == 1 && site[N-1][j] == 1) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (site[0][i] == 1 && site[N - 1][j] == 1) {
                     if (uf.connected(i, N * N - N + j)) {
                         per = true;
                         break;
