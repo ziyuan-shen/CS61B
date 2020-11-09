@@ -4,8 +4,8 @@ import edu.princeton.cs.introcs.StdRandom;
 import edu.princeton.cs.introcs.StdStats;
 
 public class PercolationStats {
-    int T;
-    double[] threshold;
+    private int T;
+    private double[] threshold;
 
     public PercolationStats(int N, int T, PercolationFactory pf) {
         if (N <= 0) {
