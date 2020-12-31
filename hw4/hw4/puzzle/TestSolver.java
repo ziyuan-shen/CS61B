@@ -1,5 +1,6 @@
 package hw4.puzzle;
 import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -120,7 +121,7 @@ public class TestSolver {
 
     @Test(timeout = 20000)
     public void test4x4BoardPuzzles() {
-        for (int i = 0; i <= 30; i += 1) {
+        for (int i = 0; i <= 31; i += 1) {
             String pnum = String.format("%02d", i);
             String puzzleName = "input/puzzle4x4-" + pnum + ".txt";
             Board b = readBoard(puzzleName);
