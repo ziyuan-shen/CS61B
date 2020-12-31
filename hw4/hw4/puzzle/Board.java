@@ -67,7 +67,7 @@ public class Board implements WorldState {
         int dis = 0;
         for (int i = 0; i < size(); i++) {
             for (int j = 0; j < size(); j++) {
-                if (goal[i][j] != tiles[i][j]) {
+                if (goal[i][j] != tiles[i][j] && tiles[i][j] != 0) {
                     dis += 1;
                 }
             }
@@ -113,6 +113,10 @@ public class Board implements WorldState {
             }
         }
         return true;
+    }
+
+    public int hashCode() {
+        return hamming();
     }
 
     /** Returns the string representation of the board. 
